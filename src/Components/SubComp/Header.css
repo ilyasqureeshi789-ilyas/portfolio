@@ -1,0 +1,77 @@
+/* Header.css - Cloud App Style */
+
+/* ========== EXISTING CSS (jo pehle se hai) ========== */
+/* Aapka jo bhi existing CSS hai, woh yahan pehle se likha hoga */
+
+/* ========== HEADER SOCIAL ICONS HOVER EFFECT (Naya add karo) ========== */
+.header-social-icon {
+  transition: all 0.3s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-social-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.4s ease;
+}
+
+.header-social-icon:hover::before {
+  left: 100%;
+}
+
+/* GitHub Hover */
+.header-social-icon:hover {
+  transform: translateY(-3px) !important;
+  background: #333 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(51, 51, 51, 0.4) !important;
+}
+
+/* LinkedIn Hover */
+.header-social-icon[title="LinkedIn"]:hover {
+  background: #0077b5 !important;
+  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.4) !important;
+}
+
+/* YouTube Hover */
+.header-social-icon[title="youtube"]:hover,
+.header-social-icon[title="YouTube"]:hover {
+  background: #ff0000 !important;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4) !important;
+}
+
+/* Pulse animation */
+.header-social-icon:hover i {
+  animation: headerIconPulse 0.4s ease;
+}
+
+@keyframes headerIconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+/* ========== MOBILE RESPONSIVE (YAHAN PASTE KARO) ========== */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Optional: Social icons size adjust on mobile */
+  .header-social-icon {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 16px !important;
+  }
+}
